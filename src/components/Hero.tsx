@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
         <div className="hero-text">
           <h1 className="hero-title">Bienvenue sur ARCHYVE PORTFOLIO</h1>
           <p className="hero-subtitle">
-            Développeur Full-Stack passionné | Solutions numériques innovantes
+            Développeur Full-Stack | Création de sites internet modernes et performants
           </p>
           <div className="hero-cta">
             <a href="#projets" className="btn btn-primary">Voir mes projets</a>

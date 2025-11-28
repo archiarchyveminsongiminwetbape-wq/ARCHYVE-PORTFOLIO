@@ -19,13 +19,15 @@ export const About: React.FC = () => {
             
             <p className="about-paragraph">
               Bienvenue ! Je suis un développeur Full-Stack passionné par la création d'expériences web 
-              exceptionnelles. Avec plusieurs années d'expérience dans le développement web, je combine 
-              créativité et expertise technique pour transformer vos idées en réalité.
+              exceptionnelles. Avec plusieurs années d'expérience dans le développement web, je développe 
+              des sites internet modernes, performants et sur mesure. Je combine créativité et expertise 
+              technique pour transformer vos idées en réalité.
             </p>
             
             <p className="about-paragraph">
               Mon approche se concentre sur la création de solutions scalables, performantes et 
-              centrées sur l'utilisateur. J'aime travailler avec les dernières technologies et 
+              centrées sur l'utilisateur. Je développe également des sites internet de qualité professionnelle 
+              qui vous aideront à atteindre vos objectifs commerciaux. J'aime travailler avec les dernières technologies et 
               participer à des projets qui font une différence.
             </p>
             
