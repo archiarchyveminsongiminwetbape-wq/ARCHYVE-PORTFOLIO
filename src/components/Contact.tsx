@@ -13,6 +13,8 @@ export const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
@@ -22,26 +24,41 @@ export const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    
-    const emailTo: string = 'archiarchyveminsongiminwetbape@gmail.com';
-    const subject: string = encodeURIComponent('ARCHYVE PORTFOLIO');
-    const body: string = encodeURIComponent(
-      `Nom: ${formData.name}\n` + 
-      `Email: ${formData.email}\n\n` + 
-      `Message:\n${formData.message}`
-    );
-    
-    const mailtoLink: string = `mailto:${emailTo}?subject=${subject}&body=${body}`;
-    
-    window.location.href = mailtoLink;
-    
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mwpdylor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        
+        // Réinitialiser le message de succès après 5 secondes
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du message:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -59,6 +76,12 @@ export const Contact: React.FC = () => {
         </div>
         
         <form onSubmit={handleSubmit} className="contact-form" noValidate>
+          {submitted && (
+            <div className="success-message">
+              ✅ Merci ! Votre message a été envoyé avec succès. Je vous répondrai bientôt.
+            </div>
+          )}
+          
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Nom complet *
@@ -114,9 +137,9 @@ export const Contact: React.FC = () => {
             <button 
               type="submit" 
               className="submit-button"
-              disabled={!formData.name || !formData.email || !formData.message}
+              disabled={!formData.name || !formData.email || !formData.message || isLoading}
             >
-              Envoyer le message
+              {isLoading ? 'Envoi en cours...' : 'Envoyer le message'}
             </button>
           </div>
         </form>
