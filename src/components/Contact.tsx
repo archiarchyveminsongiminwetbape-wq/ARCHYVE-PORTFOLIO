@@ -53,8 +53,8 @@ export const Contact: React.FC = () => {
         </p>
         
         <div className="contact-info">
-          <a href="https://wa.me/257657029080" className="whatsapp-link" title="Contactez-moi sur WhatsApp">
-            📱 WhatsApp : 657029080
+          <a href="https://wa.me/+237657029080" className="whatsapp-link" title="Contactez-moi sur WhatsApp">
+            📱 WhatsApp : +237 657029080
           </a>
         </div>
         
