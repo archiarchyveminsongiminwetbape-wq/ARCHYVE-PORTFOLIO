@@ -10,9 +10,13 @@ export const Hero: React.FC = () => {
           <p className="hero-subtitle">
             Développeur Full-Stack | Création de sites internet modernes et performants
           </p>
+          <p className="hero-description">
+            Je transforme vos idées en solutions web professionnelles. Spécialisé dans le développement de sites modernes, 
+            performants et adaptés à vos besoins. Basé au Cameroun, je travaille avec des clients du monde entier.
+          </p>
           <div className="hero-cta">
             <a href="#projets" className="btn btn-primary">Voir mes projets</a>
-            <a href="#contact" className="btn btn-secondary">Me contacter</a>
+            <a href="#contact" className="btn btn-secondary">Discutons de votre projet</a>
           </div>
         </div>
         

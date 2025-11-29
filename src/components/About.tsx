@@ -1,5 +1,17 @@
 import React from 'react';
 import './About.css';
+import { useCounter } from '../hooks/useCounter';
+
+const StatCounter: React.FC<{ target: number; label: string }> = ({ target, label }) => {
+  const { count, ref } = useCounter({ target, duration: 2000, suffix: '+' });
+
+  return (
+    <div className="stat" ref={ref}>
+      <h3 className="stat-number">{count}</h3>
+      <p className="stat-label">{label}</p>
+    </div>
+  );
+};
 
 export const About: React.FC = () => {
   return (
@@ -32,18 +44,9 @@ export const About: React.FC = () => {
             </p>
             
             <div className="about-stats">
-              <div className="stat">
-                <h3 className="stat-number">10+</h3>
-                <p className="stat-label">Projets complétés</p>
-              </div>
-              <div className="stat">
-                <h3 className="stat-number">10+</h3>
-                <p className="stat-label">Clients satisfaits</p>
-              </div>
-              <div className="stat">
-                <h3 className="stat-number">2+</h3>
-                <p className="stat-label">Années d'expérience</p>
-              </div>
+              <StatCounter target={10} label="Projets complétés" />
+              <StatCounter target={10} label="Clients satisfaits" />
+              <StatCounter target={2} label="Années d'expérience" />
             </div>
             
             <a href="#contact" className="btn btn-primary">Travaillons ensemble</a>

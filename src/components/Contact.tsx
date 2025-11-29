@@ -7,14 +7,45 @@ interface FormData {
   message: string;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Le nom est requis';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'L\'email est requis';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Veuillez entrer un email valide';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Le message est requis';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Le message doit contenir au moins 10 caractères';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
@@ -22,11 +53,24 @@ export const Contact: React.FC = () => {
       ...prev,
       [name]: value
     }));
+    // Effacer l'erreur du champ quand l'utilisateur corrige
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsLoading(true);
+    setError('');
 
     try {
       const response = await fetch('https://formspree.io/f/mwpdylor', {
@@ -53,9 +97,12 @@ export const Contact: React.FC = () => {
         setTimeout(() => {
           setSubmitted(false);
         }, 5000);
+      } else {
+        setError('Une erreur est survenue. Veuillez réessayer.');
       }
     } catch (error) {
       console.error('Erreur lors de l\'envoi du message:', error);
+      setError('Erreur de connexion. Veuillez vérifier votre connexion internet.');
     } finally {
       setIsLoading(false);
     }
@@ -82,6 +129,12 @@ export const Contact: React.FC = () => {
             </div>
           )}
           
+          {error && (
+            <div className="error-message">
+              ❌ {error}
+            </div>
+          )}
+          
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Nom complet *
@@ -93,10 +146,11 @@ export const Contact: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="form-input"
+              className={`form-input ${errors.name ? 'input-error' : ''}`}
               placeholder="Votre nom complet"
               aria-describedby="name-error"
             />
+            {errors.name && <span className="error-text">{errors.name}</span>}
           </div>
           
           <div className="form-group">
@@ -110,10 +164,11 @@ export const Contact: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="form-input"
+              className={`form-input ${errors.email ? 'input-error' : ''}`}
               placeholder="votre.email@exemple.com"
               aria-describedby="email-error"
             />
+            {errors.email && <span className="error-text">{errors.email}</span>}
           </div>
           
           <div className="form-group">
@@ -127,10 +182,11 @@ export const Contact: React.FC = () => {
               onChange={handleChange}
               required
               rows={6}
-              className="form-textarea"
+              className={`form-textarea ${errors.message ? 'input-error' : ''}`}
               placeholder="Décrivez votre projet ou votre demande..."
               aria-describedby="message-error"
             />
+            {errors.message && <span className="error-text">{errors.message}</span>}
           </div>
           
           <div className="form-actions">
