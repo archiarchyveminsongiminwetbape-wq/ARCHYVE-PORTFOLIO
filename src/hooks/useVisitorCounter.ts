@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export const useVisitorCounter = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [visitorCount, setVisitorCount] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const recordVisit = async () => {
@@ -20,25 +20,43 @@ export const useVisitorCounter = () => {
           }
         }
 
-        // Enregistrer la visite dans localStorage
+        // Si c'est une nouvelle visite, appeler notre endpoint backend pour incrémenter
         if (shouldCount) {
           localStorage.setItem('lastPortfolioVisit', now.toString());
-          
-          // Appel API pour enregistrer le visiteur (optionnel - voir commentaire ci-dessous)
-          // fetch('/api/visitors', { method: 'POST' }).catch(err => console.log('Visitor tracking:', err));
-        }
-
-        // Récupérer le nombre total de visiteurs depuis localStorage
-        // Note: Ceci est une approche simple. Pour une vraie persistance, utilise une API backend
-        const storedCount = localStorage.getItem('portfolioVisitorCount');
-        const currentCount = storedCount ? parseInt(storedCount) : 0;
-        
-        if (shouldCount) {
-          const newCount = currentCount + 1;
-          localStorage.setItem('portfolioVisitorCount', newCount.toString());
-          setVisitorCount(newCount);
+          try {
+            // POST increments and returns the new value
+            const resp = await fetch('/api/visitors', { method: 'POST' });
+            const data = await resp.json();
+            if (data && typeof data.value === 'number') {
+              localStorage.setItem('portfolioVisitorCount', data.value.toString());
+              setVisitorCount(data.value);
+            }
+          } catch (err) {
+            console.warn('Visitor increment failed, falling back to local count', err);
+            // fallback to local increment
+            const storedCount = localStorage.getItem('portfolioVisitorCount');
+            const currentCount = storedCount ? parseInt(storedCount) : 0;
+            const newCount = currentCount + 1;
+            localStorage.setItem('portfolioVisitorCount', newCount.toString());
+            setVisitorCount(newCount);
+          }
         } else {
-          setVisitorCount(currentCount);
+          // Not a new visit — fetch current global count to display
+          try {
+            const resp = await fetch('/api/visitors');
+            const data = await resp.json();
+            if (data && typeof data.value === 'number') {
+              localStorage.setItem('portfolioVisitorCount', data.value.toString());
+              setVisitorCount(data.value);
+            } else {
+              const storedCount = localStorage.getItem('portfolioVisitorCount');
+              setVisitorCount(storedCount ? parseInt(storedCount) : 0);
+            }
+          } catch (err) {
+            console.warn('Fetch visitor count failed, using local count', err);
+            const storedCount = localStorage.getItem('portfolioVisitorCount');
+            setVisitorCount(storedCount ? parseInt(storedCount) : 0);
+          }
         }
 
         setLoading(false);
