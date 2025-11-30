@@ -62,6 +62,24 @@
   margin: 40px 0;
 }
 
+.visitor-counter {
+  text-align: center;
+  padding: 20px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #667eea;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.visitor-counter strong {
+  color: #764ba2;
+  font-size: 1.2rem;
+  margin: 0 5px;
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
@@ -84,6 +102,14 @@
   color: #764ba2;
 }
 
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #999;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: 40px 15px 15px;
@@ -96,5 +122,14 @@
 
   .footer-divider {
     margin: 30px 0;
+  }
+
+  .visitor-counter {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .visitor-counter strong {
+    font-size: 1.1rem;
   }
 }

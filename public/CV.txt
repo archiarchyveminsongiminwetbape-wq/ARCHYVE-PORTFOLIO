@@ -1,0 +1,96 @@
+MANUEL AMIN - DÉVELOPPEUR FULL-STACK
+=====================================
+
+📞 +237657029080 | 💬 WhatsApp Available
+🌐 Portfolio: https://archyve-portfolio.vercel.app
+
+RÉSUMÉ PROFESSIONNEL
+====================
+Développeur Full-Stack passionné avec plus de 2 ans d'expérience dans le développement web. 
+Spécialisé dans la création d'applications web modernes, performantes et scalables.
+Expertise en React, TypeScript, JavaScript, CSS3 et technologies back-end modernes.
+
+EXPÉRIENCES PROFESSIONNELLES
+=============================
+
+Développeur Web Full-Stack - Freemium
+Période: [2023 - Présent]
+- Développement de solutions web custom pour clients variés
+- Création d'interfaces utilisateur modernes et réactives
+- Intégration de services tiers (Formspree, WhatsApp API)
+- Optimisation des performances et du SEO
+- Gestion complète du cycle de développement
+
+Développeur Frontend - Projets Personnels
+Période: [2022 - 2023]
+- 10+ projets web complétés et déployés
+- Travail avec 10+ clients satisfaits
+- Conception et développement d'interfaces UI/UX
+- Maintenance et support des applications déployées
+
+FORMATION & CERTIFICATIONS
+===========================
+- Développement Web Full-Stack (Auto-apprentissage)
+- Certification React & TypeScript
+- Certification JavaScript Avancé
+- Certification CSS3 et Design Responsive
+
+COMPÉTENCES TECHNIQUES
+======================
+
+Frontend:
+- React 18+ avec Hooks et Context API
+- TypeScript pour la sécurité des types
+- HTML5, CSS3 (Grid, Flexbox, Animations)
+- JavaScript ES6+
+- Responsive Design et Mobile-First
+- Tailwind CSS, CSS Modules
+
+Backend:
+- Node.js avec Express.js
+- MongoDB et bases de données SQL
+- API REST et GraphQL
+- Authentification JWT et OAuth
+- Formspree pour les formulaires
+
+DevOps & Outils:
+- Git & GitHub pour le versioning
+- Vercel pour le déploiement frontend
+- Docker pour la containerisation
+- Postman pour les tests API
+- VS Code et développement moderne
+
+LANGUES
+=======
+- Français (Natif)
+- Anglais (Intermédiaire)
+- Python (Basique)
+
+RÉALISATIONS & PROJETS
+======================
+1. ARCHYVE PORTFOLIO - Portfolio Personnel
+   - Application React + TypeScript
+   - Design moderne avec animations smooth
+   - Compteur de visiteurs en temps réel
+   - Formulaire de contact avec validation
+   - Intégration WhatsApp
+   - Déployé sur Vercel
+
+2. Plusieurs applications web pour clients
+   - Temps de réponse moyen: 24h
+   - Taux de satisfaction: 100%
+   - Support post-lancement inclus
+
+RÉFÉRENCES & RECOMMANDATIONS
+=============================
+Disponibles sur demande
+
+LIENS SOCIAUX
+=============
+GitHub: https://github.com/archiarchyveminsongiminwetbape-wq
+Email: contact via formulaire de contact
+WhatsApp: wa.me/+237657029080
+
+=====================================
+Document généré le: 30 Novembre 2025
+Portfolio: https://archyve-portfolio.vercel.app

@@ -43,6 +43,11 @@ export const Header: React.FC = () => {
               </a>
             </li>
             <li className="nav-item">
+              <a href="#cv" className="nav-link" onClick={closeMenu}>
+                CV
+              </a>
+            </li>
+            <li className="nav-item">
               <a href="#a-propos" className="nav-link" onClick={closeMenu}>
                 À propos
               </a>

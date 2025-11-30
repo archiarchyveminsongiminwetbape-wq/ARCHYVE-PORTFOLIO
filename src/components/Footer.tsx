@@ -1,8 +1,10 @@
 import React from 'react';
 import './Footer.css';
+import { useVisitorCounter } from '../hooks/useVisitorCounter';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { visitorCount } = useVisitorCounter();
 
   return (
     <footer className="footer">
@@ -19,6 +21,7 @@ export const Footer: React.FC = () => {
               <li><a href="#accueil">Accueil</a></li>
               <li><a href="#projets">Projets</a></li>
               <li><a href="#competences">Compétences</a></li>
+              <li><a href="#cv">CV</a></li>
               <li><a href="#a-propos">À propos</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
@@ -35,6 +38,10 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="footer-divider"></div>
+
+        <div className="visitor-counter">
+          👁️ <strong>{visitorCount}</strong> visiteur{visitorCount !== 1 ? 's' : ''} ont consulté ce portfolio
+        </div>
 
         <div className="copyright">
           &copy; {currentYear} ARCHYVE PORTFOLIO - Tous droits réservés

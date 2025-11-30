@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Manuel Amin | Développeur Full-Stack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            margin-top: 15px;
+        }
+
+        .contact-info span {
+            margin: 0 15px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .resume-text {
+            background: #f5f7fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .experience-item, .education-item, .skill-category {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child, .skill-category:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .experience-header h3 {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .experience-header .period {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .experience-item p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .skill-category p {
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .language-item {
+            background: #f5f7fa;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .language-item strong {
+            color: #667eea;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+            a {
+                text-decoration: none;
+                color: #667eea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MANUEL AMIN</h1>
+            <p>DÉVELOPPEUR FULL-STACK</p>
+            <div class="contact-info">
+                <span>📞 +237657029080</span>
+                <span>💬 WhatsApp Disponible</span>
+                <span>🌐 <a href="https://archyve-portfolio.vercel.app" style="color: #667eea; text-decoration: none;">Portfolio</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">RÉSUMÉ PROFESSIONNEL</h2>
+            <div class="resume-text">
+                <p>
+                    Développeur Full-Stack passionné avec plus de 2 ans d'expérience dans le développement web. 
+                    Spécialisé dans la création d'applications web modernes, performantes et scalables. 
+                    Expertise en React, TypeScript, JavaScript et technologies web contemporaines. 
+                    Déterminé à créer des solutions innovantes qui répondent aux besoins des clients.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">EXPÉRIENCES PROFESSIONNELLES</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Développeur Web Full-Stack - Freemium</h3>
+                    <span class="period">2023 - Présent</span>
+                </div>
+                <ul>
+                    <li>Développement de solutions web custom pour clients variés</li>
+                    <li>Création d'interfaces utilisateur modernes et réactives</li>
+                    <li>Intégration de services tiers (Formspree, WhatsApp API)</li>
+                    <li>Optimisation des performances et du SEO</li>
+                    <li>Gestion complète du cycle de développement</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Développeur Frontend - Projets Personnels</h3>
+                    <span class="period">2022 - 2023</span>
+                </div>
+                <ul>
+                    <li>10+ projets web complétés et déployés sur Vercel</li>
+                    <li>Travail avec 10+ clients satisfaits (100% satisfaction)</li>
+                    <li>Conception et développement d'interfaces modernes</li>
+                    <li>Maintenance et support des applications en production</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">COMPÉTENCES TECHNIQUES</h2>
+
+            <div class="skill-category">
+                <h3>🎨 Frontend</h3>
+                <p>React 18+, TypeScript, HTML5, CSS3 (Grid, Flexbox, Animations), JavaScript ES6+, Responsive Design, Tailwind CSS, CSS Modules</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>⚙️ Backend</h3>
+                <p>Node.js, Express.js, MongoDB, SQL, API REST, GraphQL, JWT, OAuth, Formspree</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>🛠️ Outils & DevOps</h3>
+                <p>Git & GitHub, Vercel, Docker, Postman, VS Code, npm, yarn, Build tools</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">FORMATION & CERTIFICATIONS</h2>
+            
+            <div class="education-item">
+                <h3>Développement Web Full-Stack</h3>
+                <p>Auto-apprentissage et formation continue • En cours</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Certification React & TypeScript</h3>
+                <p>Platfomes en ligne de formation spécialisées</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Certification JavaScript Avancé</h3>
+                <p>Maîtrise des concepts avancés et patterns modernes</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Certification CSS3 et Design Responsive</h3>
+                <p>Web Design et Mobile-First approach</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">LANGUES</h2>
+            <div class="languages">
+                <div class="language-item">
+                    <strong>Français</strong><br>Natif
+                </div>
+                <div class="language-item">
+                    <strong>Anglais</strong><br>Intermédiaire (Lire, Parler, Écrire)
+                </div>
+                <div class="language-item">
+                    <strong>Python</strong><br>Basique (Scripts et Automation)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">PROJETS MARQUANTS</h2>
+
+            <div class="experience-item">
+                <h3>ARCHYVE PORTFOLIO - Portfolio Personnel</h3>
+                <p><strong>Technologies:</strong> React 18+, TypeScript, CSS3, Vercel</p>
+                <ul>
+                    <li>Application React moderne avec animations smooth</li>
+                    <li>Compteur de visiteurs en temps réel (localStorage)</li>
+                    <li>Formulaire de contact avec validation (Formspree)</li>
+                    <li>Intégration WhatsApp API pour communications directes</li>
+                    <li>Section CV complète avec téléchargement PDF</li>
+                    <li>Compteurs animés et statistiques en scroll</li>
+                    <li>Design responsive et optimisé pour mobile</li>
+                    <li>Déployé sur Vercel avec CI/CD automatique</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Projets Web pour Clients</h3>
+                <p><strong>Résultats:</strong> 10+ projets livrés, 100% satisfaction client</p>
+                <ul>
+                    <li>Délai de livraison moyen: 24-48 heures pour petits projets</li>
+                    <li>Support post-lancement inclus (1 mois)</li>
+                    <li>Optimisation SEO et performance web</li>
+                    <li>Maintenance technique et mises à jour</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">RÉFÉRENCES & LIENS</h2>
+            <div class="resume-text">
+                <p>
+                    <strong>Portfolio:</strong> <a href="https://archyve-portfolio.vercel.app" style="color: #667eea;">https://archyve-portfolio.vercel.app</a><br>
+                    <strong>GitHub:</strong> <a href="https://github.com/archiarchyveminsongiminwetbape-wq" style="color: #667eea;">github.com/archiarchyveminsongiminwetbape-wq</a><br>
+                    <strong>Contact:</strong> +237657029080 (WhatsApp/SMS) ou via formulaire de contact<br>
+                    <strong>Disponibilité:</strong> Projets freemium et clients réguliers
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>CV généré le 30 Novembre 2025 | Manuel Amin | Développeur Full-Stack</p>
+            <p><a href="https://archyve-portfolio.vercel.app" style="color: #999; text-decoration: none;">https://archyve-portfolio.vercel.app</a></p>
+        </div>
+    </div>
+</body>
+</html>
