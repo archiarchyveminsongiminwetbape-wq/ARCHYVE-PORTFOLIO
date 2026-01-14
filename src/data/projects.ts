@@ -15,6 +15,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 5,
+    title: "Archyve Academy",
+    description: "Plateforme de formation en ligne pour l'apprentissage et le développement des compétences",
+    longDescription: "Archyve Academy propose des formations de qualité dans divers domaines, avec des cours accessibles à tous les niveaux. Notre plateforme interactive permet un apprentissage personnalisé et efficace.",
+    image: "/images/archyve-academy.jpg",
+    tags: ["Education", "Formation en ligne", "Développement personnel"],
+    links: {
+      website: "https://archyve-accademy.vercel.app/"
+    },
+    featured: true
+  },
+  {
     id: 1,
     title: "Explore Cameroun",
     description: "Découvrez les merveilles du Cameroun à travers ce guide touristique interactif",
